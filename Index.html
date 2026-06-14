@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unes Benlaf – Orientation Bac Maroc</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo-wrap">
+        <div class="logo-icon">UB</div>
+        <div>
+          <h1>UNES BENLAF</h1>
+          <p class="subtitle">Orientation Bac Maroc</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="calculator-section">
+      <div class="card calc-card">
+        <h2 class="section-title">Calculer votre moyenne</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="noteRegionale">Note Régionale <span class="unit">(/20)</span></label>
+            <input type="number" id="noteRegionale" placeholder="Ex: 14.50" min="0" max="20" step="0.01" />
+          </div>
+          <div class="form-group">
+            <label for="noteNationale">Note Nationale <span class="unit">(/20)</span></label>
+            <input type="number" id="noteNationale" placeholder="Ex: 15.25" min="0" max="20" step="0.01" />
+          </div>
+        </div>
+        <button id="btnCalculer" onclick="calculer()">Calculer</button>
+      </div>
+
+      <div class="card result-card" id="resultCard" style="display:none;">
+        <h2 class="section-title">Résultats</h2>
+        <div class="scores-row">
+          <div class="score-box">
+            <span class="score-label">Note Régionale</span>
+            <span class="score-value" id="resRegionale">–</span>
+          </div>
+          <div class="score-box">
+            <span class="score-label">Note Nationale</span>
+            <span class="score-value" id="resNationale">–</span>
+          </div>
+          <div class="score-box highlight">
+            <span class="score-label">Moyenne calculée</span>
+            <span class="score-value" id="resMoyenne">–</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="schools-section" id="schoolsSection" style="display:none;">
+      <div class="filters-bar card">
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="Rechercher un établissement…" oninput="filtrer()" />
+        </div>
+        <div class="filter-wrap">
+          <label for="filterCategory">Catégorie</label>
+          <select id="filterCategory" onchange="filtrer()">
+            <option value="">Toutes</option>
+            <option value="ENSA">ENSA</option>
+            <option value="ENCG">ENCG</option>
+            <option value="ENSAM">ENSAM</option>
+            <option value="FST">FST</option>
+            <option value="EST">EST</option>
+            <option value="BTS">BTS</option>
+            <option value="CPGE">CPGE</option>
+            <option value="Médecine">Médecine</option>
+            <option value="Pharmacie">Pharmacie</option>
+            <option value="Dentaire">Dentaire</option>
+            <option value="ISPITS">ISPITS</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="countMsg" class="count-msg"></div>
+      <div id="schoolsList" class="schools-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Unes Benlaf – Orientation Bac Maroc. Tous droits réservés.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+            </html>
